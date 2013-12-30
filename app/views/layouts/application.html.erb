@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskSystem</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+	<body data-offset="50" data-controller-name="<%= controller_name %>">
+  		<div class="navbar navbar-fixed-top">
+    			<div class="navbar-inner">
+      				<div class="container">
+        					<h3>
+          						<a href="/" class="site-logo"></a>
+        					</h3>
+        					
+      				</div>
+    			</div>
+  		</div>
+
+  		<div class="container">
+  	   		<div id="main" class="container-fluid">
+      				<%= yield %>
+    			</div>
+  		</div>
+
+	</body>
+</html>

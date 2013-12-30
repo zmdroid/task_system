@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task name:</strong>
+  <%= @task.task_name %>
+</p>
+
+<p>
+  <strong>Task type:</strong>
+  <%= @task.task_type_id %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @task.publisher_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @task.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @task.end_date %>
+</p>
+
+<p>
+  <strong>Max price:</strong>
+  <%= @task.max_price %>
+</p>
+
+<p>
+  <strong>Min price:</strong>
+  <%= @task.min_price %>
+</p>
+
+<p>
+  <strong>Max person:</strong>
+  <%= @task.max_person %>
+</p>
+
+<p>
+  <strong>Min person:</strong>
+  <%= @task.min_person %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @task.location %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @task.state %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

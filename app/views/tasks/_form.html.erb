@@ -1,0 +1,57 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :task_name %><br>
+    <%= f.text_field :task_name %>
+  </div>
+  <div class="field">
+    <%= f.label :task_type_id %><br>
+    <%= select('task','task_type_id',TaskType.all.collect{|t| [t.name,t.id]},{:include_blank => false }) %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :max_price %><br>
+    <%= f.text_field :max_price %>
+  </div>
+  <div class="field">
+    <%= f.label :min_price %><br>
+    <%= f.text_field :min_price %>
+  </div>
+  <div class="field">
+    <%= f.label :max_person %><br>
+    <%= f.number_field :max_person %>
+  </div>
+  <div class="field">
+    <%= f.label :min_person %><br>
+    <%= f.number_field :min_person %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

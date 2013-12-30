@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task_copy.task_id %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @task_copy.publisher_id %>
+</p>
+
+<p>
+  <strong>Current date:</strong>
+  <%= @task_copy.current_date %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @task_copy.state %>
+</p>
+
+<%= link_to 'Edit', edit_task_copy_path(@task_copy) %> |
+<%= link_to 'Back', task_copies_path %>

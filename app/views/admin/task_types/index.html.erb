@@ -1,0 +1,29 @@
+<h1>Listing admin_task_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_types.each do |task_type| %>
+      <tr>
+        <td><%= task_type.name %></td>
+        <td><%= task_type.remark %></td>
+        <td><%= link_to 'Show', [:admin,task_type] %></td>
+        <td><%= link_to 'Edit', edit_admin_task_type_path(task_type) %></td>
+        <td><%= link_to 'Destroy', admin_task_type_path(task_type.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task type', new_admin_task_type_path %>

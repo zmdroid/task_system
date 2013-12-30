@@ -1,0 +1,19 @@
+<h1>任务大厅</h1>
+<table>
+  <thead>
+    <td>任务</th>
+    <td>佣金</td>
+    <td>发布人</td>
+    <td>任务截止时间</td>
+    <td>操作</td>
+  </thead>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.task_name%></td>
+      <td><%= task.max_price%></td>
+      <td><%= task.publisher.company_name%></td>
+      <td><%= task.end_date%></td>
+      <td><%= link_to '查看详情', task %></td>
+    </tr>
+  <% end %>
+</table>

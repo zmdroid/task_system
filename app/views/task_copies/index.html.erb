@@ -1,0 +1,31 @@
+<h1>Listing task_copies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Current date</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_copies.each do |task_copy| %>
+      <tr>
+        <td><%= task_copy.task_id %></td>
+        <td><%= task_copy.current_date %></td>
+        <td><%= task_copy.state %></td>
+        <td><%= link_to 'Show', task_copy %></td>
+        <td><%= link_to 'Edit', edit_task_copy_path(task_copy) %></td>
+        <td><%= link_to 'Destroy', task_copy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task copy', new_task_copy_path %>
